@@ -7,36 +7,35 @@ describe('', () => {
     })
 })
 
-describe('enhancing items', () => {
-    describe('fail fn', () => {
-        test('returns durability 85', () => {
+describe('testing enhancement success', () => {
+    describe('success fn', () => {
+        test('returns enhancement 20', () => {
             const item = {
-                name: 'Bag of holding',
-                durability: 90,
-                enhancement: 14
+                name: 'Singing Sword',
+                durability: 96,
+                enhancement: 19
             }
-            expect(enhancer.fail(item)).toEqual({
-                name: 'Bag of holding',
-                durability: 85,
-                enhancement: 14
+            expect(enhancer.success(item)).toEqual({
+                name: 'Singing Sword',
+                durability: 96,
+                enhancement: 20
             })
         })
     })
 })
 
-
-describe('testing enhancement success', () => {
-    describe('success fn', () => {
-        test('returns enhancement 3', () => {
+describe('enhancing items', () => {
+    describe('fail fn', () => {
+        test('returns durability 85', () => {
             const item = {
-                name: 'Bag of holding',
-                durability: 96,
-                enhancement: 2
+                name: 'Singing Sword',
+                durability: 90,
+                enhancement: 14
             }
-            expect(enhancer.success(item)).toEqual({
-                name: 'Bag of holding',
-                durability: 96,
-                enhancement: 3,
+            expect(enhancer.fail(item)).toEqual({
+                name: 'Singing Sword',
+                durability: 85,
+                enhancement: 14
             })
         })
     })
