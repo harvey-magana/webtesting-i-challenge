@@ -14,7 +14,19 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item };
+  item = {
+    name: this.name,
+    enhancement: this.enhancement, 
+    durability: this.durability
+  }
+
+  if(item.durability < 100) {
+    item.durability += 100;
+  } else if (item.durability === 100) {
+    return item.durability
+  }
+
+  return { ...item, durability: 100 };
 }
 
 function get(item) {
